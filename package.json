@@ -1,13 +1,15 @@
 {
   "name": "assetdl",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple asset downloader script for Jenkins and Github",
+  "homepage": "https://github.com/DavidCresswell/AssetDL",
+  "author": "David Cresswell",
   "main": "out/main.js",
   "scripts": {
     "download": "node ./bin/assetdl"
   },
-  "author": "",
   "license": "MIT",
+  "repository": "github:DavidCresswell/assetdl",
   "preferGlobal": true,
   "devDependencies": {
     "@types/js-yaml": "^4.0.5",
