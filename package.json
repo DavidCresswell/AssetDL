@@ -7,7 +7,7 @@
     "download": "node ./bin/assetdl"
   },
   "author": "",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "preferGlobal": true,
   "devDependencies": {
     "@types/js-yaml": "^4.0.5",
