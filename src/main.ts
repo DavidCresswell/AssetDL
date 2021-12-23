@@ -113,10 +113,13 @@ export default function assetdl() {
 
     async function performDownload(downloadUrl: string, assetKey: string, targetPath: string, filename: string): Promise<boolean> {
         console.log("Downloading asset: " + assetKey);
+        var storedPath = null;
         if (targetPath == null) {
+            storedPath = filename;
             targetPath = path.resolve(rootPath, filename);
         } else {
             targetPath = targetPath.replace('$filename', filename);
+            storedPath = targetPath;
             targetPath = path.resolve(rootPath, targetPath);
         }
         var response = await fetch(downloadUrl);
@@ -135,13 +138,13 @@ export default function assetdl() {
             stream.on('error', reject);
         });
         if (state[assetKey].path != null) {
-            var existing = path.join(rootPath, state[assetKey].path);
+            var existing = path.resolve(rootPath, state[assetKey].path);
             if (fs.existsSync(existing)) {
                 fs.unlinkSync(existing);
             }
         }
         fs.renameSync(targetPath + ".assetdltmp", targetPath);
-        state[assetKey].path = targetPath;
+        state[assetKey].path = storedPath;
         return true;
     }
 }
