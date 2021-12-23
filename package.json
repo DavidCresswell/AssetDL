@@ -1,0 +1,23 @@
+{
+  "name": "assetdl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "out/main.js",
+  "scripts": {
+    "download": "node ./bin/assetdl"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "preferGlobal": true,
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^17.0.3"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "node-fetch": "^2.6.1"
+  },
+  "bin": {
+    "assetdl": "./bin/assetdl"
+  }
+}
